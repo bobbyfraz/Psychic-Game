@@ -7,14 +7,16 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/javascript" href="assets/javascript/game.js">
+	
 </head>
 
-<body>
+<body class="container">
 
 	<h1>The Psychic Game</h1>
 
 	<h2>Guess what letter I am thinking of...</h2>
+
+	<br>
 
 	<div id="game">
 		<div id="wins">
@@ -33,47 +35,7 @@
 		<div id="lose"></div>
 	</div>
 
-	<script type="text/javascript">
-	//create varriables 
-	var wins = 0;
-	var losses = 0;
-	var guessesleft = 9;
-	var userguess = "";
-	var turns = 9;
-
-	var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
-	//create click function
-	document.onkeyup = function(event) {
-		var userguess = event.key;
-		var computerpick = letters[Math.floor(Math.random() * letters.length)];
-		console.log(computerpick);
-		
-		//create resset after guessesleft = 0
-		//make computer pick last for 9 clicks
-
-		if (userguess == computerpick){
-			wins++;
-		}
-		else {
-			guessesleft--;
-		};
-
-		if(guessesleft<=0){
-			document.getElementById("lose").innerHTML = "Nice try - reload page to restart game"
-		};
-
-		document.getElementById("wincount").innerHTML = wins;
-		document.getElementById("losscount").innerHTML = losses;
-		document.getElementById("guessleftcount").innerHTML = guessesleft;
-		document.getElementById("guesslist").innerHTML = userguess;
-	}
-
-
-	//create guess log
-
-
-	</script>
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
 
 </body>
 
